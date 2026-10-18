@@ -17,3 +17,17 @@ targets:
   # prod:
   #   workspace:
   #     host: https://dbc-84c4ef57-d8c7.cloud.databricks.com
+resources:
+  jobs:
+    revenue_pipeline:
+      name: "[dev] Revenue Pipeline"
+      tasks:
+        - task_key: run_revenue_pipeline
+          spark_python_task:
+            python_file: ./src/first_databricks_pipeline.py
+          environment_key: default
+
+      environments:
+        - environment_key: default
+          spec:
+            environment_version: "2"

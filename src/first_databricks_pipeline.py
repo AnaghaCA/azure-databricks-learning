@@ -13,7 +13,6 @@ def calculate_revenue_with_tax(df: DataFrame) -> DataFrame:
 def main():
     spark = (
         SparkSession.builder
-        .master("local[2]")
         .appName("AzureDatabricksLearning")
         .getOrCreate()
     )
